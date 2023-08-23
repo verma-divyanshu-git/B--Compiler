@@ -1,0 +1,64 @@
+10 is a line number---------------REM SAMPLE PROGRAM WITH SUBROUTINES
+20 is a line number---------------REM
+30 is a line number---------------REM A IS ARRAY TO HOLD THE DATA ITEMS
+40 is a line number---------------REM I IS THE LOOP INDEX VARIABLE
+50 is a line number---------------REM X HOLDS THE VALUE WE SEEK
+60 is a line number---------------REM F IS A FLAG, 0 MEANS NOT FOUND, 1 MEANS FOUND
+70 is a line number---------------REM N IS NUMBER OF ELEMENTS IN A
+80 is a line number---------------REM
+100 is a line number---------------DIM		A(19)	
+110 is a line number---------------REM
+120 is a line number---------------REM **************** MAIN *******************
+130 is a line number---------------REM
+140 is a line number---------------REM READ DATA INTO ARRAY A
+150 is a line number---------------LET		N	=20 is a line number---------------
+160 is a line number---------------GOSUB380 is a line number---------------
+170 is a line number---------------REM GET VALUE FOR WHICH TO SEARCH
+180 is a line number---------------PRINT"FIND WHAT"
+190 is a line number---------------INPUT		X	
+200 is a line number---------------REM DO SEQUENTIAL SEARCH
+210 is a line number---------------GOSUB470 is a line number---------------
+220 is a line number---------------REM REPORT RESULTS
+230 is a line number---------------IF		F	=1 is a line number---------------THEN260 is a line number---------------
+240 is a line number---------------PRINT		X	"NOT FOUND"
+250 is a line number---------------GOTO270 is a line number---------------
+260 is a line number---------------PRINT		X	"FOUND IN SLOT"		I	
+270 is a line number---------------REM TRY AGAIN?
+280 is a line number---------------PRINT"TRY AGAIN"
+290 is a line number---------------INPUT		A$	
+300 is a line number---------------IF		A$	="Y"THEN170 is a line number---------------
+310 is a line number---------------IF		A$	="N"THEN340 is a line number---------------
+320 is a line number---------------PRINT"ANSWER MUST BE Y OR N!"
+330 is a line number---------------GOTO280 is a line number---------------
+340 is a line number---------------STOP
+350 is a line number---------------REM
+360 is a line number---------------REM **************** SUBROUTINES *******************
+370 is a line number---------------REM
+380 is a line number---------------REM SUBROUTINE TO LOAD DATA FROM DATA STATEMENTS INTO A
+390 is a line number---------------REM INPUT N NUMBER OF ELEMENTS
+400 is a line number---------------REM OUTPUT A(), ARRAY WITH N ELEMENTS
+410 is a line number---------------REM
+420 is a line number---------------FOR		I	=0TO		N	-1 is a line number---------------
+430 is a line number---------------INPUT		A(I)	
+440 is a line number---------------NEXT		I	
+450 is a line number---------------RETURN
+460 is a line number---------------REM
+470 is a line number---------------REM SUBROUTINE TO DO SEQUENTIAL SEARCH FOR X IN A
+480 is a line number---------------REM INPUT N NUMBER OF ELEMENTS
+490 is a line number---------------REM INPUT A(), ARRAY WITH N ELEMENTS
+500 is a line number---------------REM INPUT X, ELEMENT VALUE TO SEARCH FOR
+510 is a line number---------------REM OUTPUT F, 0 MEANS NOT FOUND, F=1 MEANS FOUND
+520 is a line number---------------REM OUTPUT I, INDEX OF X IN A() IF F=1, N OTHERWISE
+530 is a line number---------------REM
+540 is a line number---------------LET		F	=0
+550 is a line number---------------FOR		I	=0TO		N	-1 is a line number---------------
+560 is a line number---------------IF		A(I)	<>		X	THEN590 is a line number---------------
+570 is a line number---------------LET		F	=1 is a line number---------------
+580 is a line number---------------GOTO600 is a line number---------------
+590 is a line number---------------NEXT		I	
+600 is a line number---------------RETURN
+610 is a line number---------------REM
+620 is a line number---------------REM ******************* DATA ***********************
+630 is a line number---------------DATA21 is a line number---------------85 is a line number---------------80 is a line number---------------14 is a line number---------------60 is a line number---------------76 is a line number---------------87 is a line number---------------49 is a line number---------------78 is a line number---------------81 is a line number---------------96 is a line number---------------25 is a line number---------------17 is a line number---------------22 is a line number---------------13 is a line number---------------91 is a line number---------------23 is a line number---------------62 is a line number---------------5 is a line number---------------57 is a line number---------------
+640 is a line number---------------REM ******************* END ************************
+650 is a line number---------------END
